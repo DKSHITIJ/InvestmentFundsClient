@@ -13,7 +13,7 @@ import com.app1.investmentfundsclient.service.InvestmentFundsClientService;
 @Component
  public class InvestmentFundsClientServiceImpl implements InvestmentFundsClientService{
 
-	public static final String INVESTMENTFUNDS_SERVICE_URL = "http://INVESTMENTFUNDS-SERVICE";
+	public static final String INVESTMENTFUNDS_SERVICE_URL = "http://INVESTMENTFUNDS-SERVICE/v1/fundsservice/totalfunds";
 	@Autowired
 	 protected RestTemplate restTemplate;
 	

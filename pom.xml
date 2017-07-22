@@ -15,7 +15,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.4.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
 	<properties>
@@ -29,6 +29,14 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka</artifactId>
+
+			<exclusions>
+				<exclusion>
+					<groupId>javax.ws.rs</groupId>
+					<artifactId>jsr311-api</artifactId>
+				</exclusion>
+			</exclusions>
+
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -44,18 +52,25 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.app1</groupId>
 			<artifactId>InvestmentFundsDomain</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jersey</artifactId>
 		</dependency>
-		
+
+		<!-- This dependency is used for identifying jars containing conflicting classes    
+		 <dependency>
+			<groupId>org.jhades</groupId>
+			<artifactId>jhades</artifactId>
+			<version>1.0.4</version>
+		</dependency>
+		-->
 	</dependencies>
 
 	<dependencyManagement>
@@ -67,7 +82,7 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			
+
 		</dependencies>
 	</dependencyManagement>
 
